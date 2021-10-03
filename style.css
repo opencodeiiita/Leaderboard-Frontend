@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+
+
+body{
+    background: #fff8f6;
+    padding: 10px 60px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    box-shadow: 5px;
+}
+h1{
+    font-size:30px;
+    text-align:center;
+    color: #41deb7;
+}
+table{
+    margin: 40px 0px;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 700;
+    width: 700px;
+    margin:0 auto;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-spacing:-1px 5px;
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+table thead {
+    background-color: #3b72ff;
+    font-size: 17px;
+    color: #fff;
+} 
+table td:nth-child(5),
+table td:nth-child(4),
+table td:nth-child(3), 
+table th:nth-child(5),
+table th:nth-child(4),
+table th:nth-child(3){
+  width:150px;
+}
+table td, 
+table th { 
+    border-bottom: 1px solid #3b72ff;
+    height: 40px;
+    vertical-align: middle;
+}
+
+table thead th + th,
+table tbody td {
+    border-right: 1px solid #3b72ff;
+    border-left: 1px solid #3b72ff;
+}
+
+table tbody td:nth-child(5){
+    border-right: none;
+}
+  

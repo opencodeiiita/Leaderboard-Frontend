@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./style.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
     <title>Opencode'21 Leaderboard</title>
 </head>
 <body>
-    <h1>That's a messed up leaderboard</h1>
-    <table id="pointsTable">
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Points</th>
-           
-          </tr>
-        </thead>
-        <tbody>
+    <img src="https://avatars.githubusercontent.com/u/46129596?s=200&v=4" alt="Paris" class="center" width="50px" height="50px">
+  </div>
+  <br>
+  <br>
+    <h1>Leaderboard</h1>
+    <table class="pointsTable">
+      <thead>
+        <tr>           
+          <th>Name</th>
+          <th>Points</th>
+        </tr> 
+      </thead>
+      <tbody>
+        
+        
          
-        </tbody>
-      </table>
-
-    <script>
+        </tr>
+      </tbody>
+    </table>
+    
+ <script>
         async function getData(){
             let res = await fetch('https://opencodeiiita.herokuapp.com/get-all-data/');
             let data = await res.json();
@@ -47,6 +52,5 @@
                 }
 }
     </script>
-
-</body>
+  </body>
 </html>
