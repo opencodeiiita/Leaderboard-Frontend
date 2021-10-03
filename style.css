@@ -10,7 +10,7 @@ body{
 }
 
 .logo-img{
-    width: 8%;
+   width: 8%;
     padding-top: 1rem;
 }
 
@@ -28,6 +28,11 @@ body{
 /* Media Queries */
 @media (min-width:400px) and (max-width:800px)
 {
+    .logo-img{
+    width: 20%;
+    }
+
+
     #pointsTable{
         margin: 8rem 70% 4rem 20%;
     }
