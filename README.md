@@ -10,4 +10,4 @@ Live leaderboard for Opencode'21 contributors
  - Bootstrap
  - Jquery
 
-And don't forget to star ⭐ the repo, it helps ^^.
+And don't forget to star ⭐ the repo, it helps ^^
