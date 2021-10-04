@@ -40,29 +40,42 @@
       </table>
 
     <script>
-        async function getData(){
-            let res = await fetch('https://opencodeiiita.herokuapp.com/get-all-data/');
-            let data = await res.json();
-            return data;
-        }
+			async function getData() {
+				let res = await fetch("https://opencodeiiita.herokuapp.com/get-all-data/");
+				let data = await res.json();
+				return data;
+			}
 
-        getData()
-            .then(data => {
-                console.log(data);
-                addToTable(data)
-            })
+			getData().then(data => {
+				console.log(data);
+				addToTable(data);
+			});
 
-            function addToTable(arr) {
-                var i;
-                for(i = 0; i < arr.length; i++) {
-                        name=arr[i].username;
-                        points= arr[i].totalPoints;
-                        rank = i + 1;
-                        var markup = "<tr><td>" + rank + "&nbsp;" + "</td><td>"+ name + "</td><td> " + "&nbsp;" + points + "</td></tr>";
-                        $("table tbody").append(markup);
-                }
-}
-    </script>
+			function addToTable(arr) {
+				var set = new Set();
+				for (i = 0; i < arr.length; i++) {
+					set.add(arr[i].totalPoints);
+				}
+
+				var i;
+				for (i = 0; i < arr.length; i++) {
+					name = arr[i].username;
+					points = arr[i].totalPoints;
+					rank = [...set].indexOf(arr[i].totalPoints) + 1;
+					var markup =
+						"<tr><td>" +
+						rank +
+						"&nbsp;" +
+						"</td><td>" +
+						name +
+						"</td><td> " +
+						"&nbsp;" +
+						points +
+						"</td></tr>";
+					$("table tbody").append(markup);
+				}
+			}
+		</script>
 
 </body>
 </html>
