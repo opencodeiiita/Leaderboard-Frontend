@@ -16,7 +16,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
     <title>Opencode'21 Leaderboard</title>
 </head>
-<body>
+<body onload="fun()">
+
+<div id="loader"></div>
              <h1 class="heading">OpenCode'21 Leaderboard!</h1>
     <h2>Organised by <strong>Geekhaven</strong></h2>
              <img class="logo-img" src="https://i.pinimg.com/originals/c2/a9/c9/c2a9c9621175a6f04804d0d192a787b0.png" alt="Alternate">
@@ -63,6 +65,17 @@
                 }
 }
     </script>
+    
+    <script>
+      
+    var loaders = document.getElementById("loader");
+
+    function fun(){
+      loaders.style.display='none';
+    }
+
+</script>
+    
 
 </body>
 </html>
