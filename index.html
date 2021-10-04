@@ -28,6 +28,7 @@
     <table id="pointsTable">
         <thead>
           <tr>
+            <th>Rank</th>
             <th>Username</th>
             <th>Points</th>
            
@@ -56,7 +57,8 @@
                 for(i = 0; i < arr.length; i++) {
                         name=arr[i].username;
                         points= arr[i].totalPoints;
-                        var markup = "<tr><td>"+ name + "</td><td> " + "&nbsp;" + points + "</td></tr>";
+                        rank = i + 1;
+                        var markup = "<tr><td>" + rank + "&nbsp;" + "</td><td>"+ name + "</td><td> " + "&nbsp;" + points + "</td></tr>";
                         $("table tbody").append(markup);
                 }
 }
