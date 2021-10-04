@@ -51,15 +51,24 @@
                 console.log(data);
                 addToTable(data)
             })
-
-            function addToTable(arr) {
-                var i;
+  function addToTable(arr) {
+                var i,rank,count=1,max;
                 for(i = 0; i < arr.length; i++) {
+                        
+                        if(arr[i].totalPoints==arr[i+1].totalPoints)
+                        {
+                          rank=count;
+                        } 
+                        else{
+                          rank=count;
+                          count++;
+                          
+                        }
                         name=arr[i].username;
                         points= arr[i].totalPoints;
-                        rank = i + 1;
-                        var markup = "<tr><td>" + rank + "&nbsp;" + "</td><td>"+ name + "</td><td> " + "&nbsp;" + points + "</td></tr>";
+                        var markup = "<tr><td>"+ name + "</td><td> " + "&nbsp;" + points +"</td><td>"+ "&nbsp;" + rank +"</td></tr>";
                         $("table tbody").append(markup);
+                      
                 }
 }
     </script>
