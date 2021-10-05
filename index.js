@@ -42,9 +42,9 @@ function addToTable(arr) {
 
     var i;
     for (i = 0; i < arr.length; i++) {
-        name = arr[i].username;
-        points = arr[i].totalPoints;
-        if (lastScore !== points) {
+        let name = arr[i].username;
+        let points = arr[i].totalPoints;
+        if ((points <= lastScore && points !== lastScore) || lastScore === -1) {
             lastScore = points;
             rank++;
         }
