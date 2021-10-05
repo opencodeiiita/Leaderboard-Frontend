@@ -20,7 +20,7 @@ body {
 
 #pointsTable {
   /* width: 20%; */
-  margin: 8rem 0 4rem 35%;
+  margin: 8rem auto;
 }
 
 /* Media Queries */
@@ -30,7 +30,7 @@ body {
   }
 
   #pointsTable {
-    margin: 8rem 70% 4rem 20%;
+    margin: 8rem auto;
   }
 }
 
