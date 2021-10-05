@@ -1,81 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="Assets/favicon-opencode.ico" type="image/x-icon" />
 
     <!-- Our Css -->
-   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+      integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+      crossorigin="anonymous"
+    ></script>
     <title>Opencode'21 Leaderboard</title>
-</head>
-<body>
-             <h1 class="heading">OpenCode'21 Leaderboard!</h1>
+  </head>
+  <body>
+    <h1 class="heading">OpenCode'21 Leaderboard!</h1>
     <h2>Organised by <strong>Geekhaven</strong></h2>
-             <img class="logo-img" src="https://i.pinimg.com/originals/c2/a9/c9/c2a9c9621175a6f04804d0d192a787b0.png" alt="Alternate">
-
-
-    
-
+    <img
+      class="logo-img"
+      src="https://i.pinimg.com/originals/c2/a9/c9/c2a9c9621175a6f04804d0d192a787b0.png"
+      alt="Alternate"
+    />
 
     <table id="pointsTable">
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Username</th>
-            <th>Points</th>
-           
-          </tr>
-        </thead>
-        <tbody>
-         
-        </tbody>
-      </table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Username</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
     <script>
-			async function getData() {
-				let res = await fetch("https://opencodeiiita.herokuapp.com/get-all-data/");
-				let data = await res.json();
-				return data;
-			}
+      async function getData() {
+        let res = await fetch('https://opencodeiiita.herokuapp.com/get-all-data/');
+        let data = await res.json();
+        return data;
+      }
 
-			getData().then(data => {
-				console.log(data);
-				addToTable(data);
-			});
+      getData().then(data => {
+        console.log(data);
+        addToTable(data);
+      });
 
-			function addToTable(arr) {
-				var set = new Set();
-				for (i = 0; i < arr.length; i++) {
-					set.add(arr[i].totalPoints);
-				}
+      function addToTable(arr) {
+        var set = new Set();
+        for (i = 0; i < arr.length; i++) {
+          set.add(arr[i].totalPoints);
+        }
 
-				var i;
-				for (i = 0; i < arr.length; i++) {
-					name = arr[i].username;
-					points = arr[i].totalPoints;
-					rank = [...set].indexOf(arr[i].totalPoints) + 1;
-					var markup =
-						"<tr><td>" +
-						rank +
-						"&nbsp;" +
-						"</td><td>" +
-						name +
-						"</td><td> " +
-						"&nbsp;" +
-						points +
-						"</td></tr>";
-					$("table tbody").append(markup);
-				}
-			}
-		</script>
+        var i;
+        for (i = 0; i < arr.length; i++) {
+          name = arr[i].username;
+          points = arr[i].totalPoints;
+          rank = [...set].indexOf(arr[i].totalPoints) + 1;
+          var markup =
+            '<tr><td>' +
+            rank +
+            '&nbsp;' +
+            '</td><td>' +
+            name +
+            '</td><td> ' +
+            '&nbsp;' +
+            points +
+            '</td></tr>';
 
-</body>
+          $('table tbody').append(markup);
+        }
+      }
+    </script>
+  </body>
 </html>
