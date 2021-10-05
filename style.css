@@ -34,3 +34,19 @@ body {
   }
 }
 
+
+
+  th, td{
+    border-collapse: collapse;
+    border: 1px solid black;
+    border-radius: 0.5px;
+    text-align: center;
+    margin: 5px;
+    padding: 10px;
+  }
+  th{
+    background-color: rgb(11, 230, 29);
+  }
+  tr:hover{
+    background-color: rgb(11, 230, 29);
+  }
