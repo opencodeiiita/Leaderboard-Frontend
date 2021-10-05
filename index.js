@@ -2,44 +2,46 @@ var page = 1;
 var rank = 0;
 var lastScore = -1;
 var hasNext = true;
-var previousFetched = Date.now();
+let isFetching = true;
 const $end = document.querySelector('#end');
+const $logo = document.querySelector('#logo');
 async function getData() {
+    $logo.style.display = "";
     let res = await fetch(`https://opencodeiiita.herokuapp.com/get-all-data/?page=${page}`);
     let data = await res.json();
+    $logo.style.display = "none";
     return data;
 }
 window.addEventListener('scroll', () => {
-    const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
-    if (scrollTop + clientHeight > scrollHeight - 5) {
+    if (isFetching)
+        return;
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        console.log('reached end');
         page++;
+        isFetching = true;
         if (hasNext) {
             previousFetched = Date.now();
             getData().then(data => {
-                console.log(data);
+                isFetching = true;
                 hasNext = data.has_next;
                 addToTable(data.data);
+                isFetching = false;
             });
         }
         else {
             $end.style.display = "block";
+            isFetching = true;
         }
-        // setTimeout(createPost, 2000);       
     }
-
 });
 getData().then(data => {
+    isFetching = true;
     console.log(data);
     hasNext = data.has_next;
     addToTable(data.data);
+    isFetching = false;
 });
-
 function addToTable(arr) {
-    // var set = new Set();
-    // for (i = 0; i < arr.length; i++) {
-    //     set.add(arr[i].totalPoints);
-    // }
-
     var i;
     for (i = 0; i < arr.length; i++) {
         name = arr[i].username;
@@ -48,7 +50,6 @@ function addToTable(arr) {
             lastScore = points;
             rank++;
         }
-        // rank = [...set].indexOf(arr[i].totalPoints) + 1;
         switch (rank) {
             case 1:
                 markup =
