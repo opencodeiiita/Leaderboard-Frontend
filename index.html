@@ -73,8 +73,8 @@
           rank = [...set].indexOf(arr[i].totalPoints) + 1;
           var markup;
 
-          switch (i) {
-            case 0:
+          switch (rank) {
+            case 1:
               markup =
                 '<tr style="background-color: gold;"><td>' +
                 rank +
@@ -86,7 +86,7 @@
                 points +
                 '</td></tr>';
               break;
-            case 1:
+            case 2:
               markup =
                 '<tr style="background-color: silver;"><td>' +
                 rank +
@@ -98,7 +98,7 @@
                 points +
                 '</td></tr>';
               break;
-            case 2:
+            case 3:
               markup =
                 '<tr style="background-color: goldenrod;"><td>' +
                 rank +
