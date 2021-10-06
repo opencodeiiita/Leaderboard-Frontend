@@ -29,24 +29,25 @@
     <title>Opencode'21 Leaderboard</title>
   </head>
   <body>
-    <h1 class="heading">OpenCode'21 Leaderboard!</h1>
-    <h2>Organised by <strong>Geekhaven</strong></h2>
     <img
       class="logo-img"
       src="https://i.pinimg.com/originals/c2/a9/c9/c2a9c9621175a6f04804d0d192a787b0.png"
       alt="Alternate"
     />
-
-    <table id="pointsTable">
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>Username</th>
-          <th>Points</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <h1 class="heading">OpenCode'21 Leaderboard!</h1>
+    <h2>Organised by <strong>Geekhaven</strong></h2>
+    <div class="table-div">
+      <table id="pointsTable" class="rounded">
+        <thead>
+          <tr>
+            <th style="border-radius: 12px 0 0 0;" width='25%'>Rank</th>
+            <th width='50%'>Username</th>
+            <th style="border-radius: 0 12px 0 0;" width='25%'>Points</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
   <img id="logo" src="./Assets/loader.gif" alt="Loader" style="height: 100px; width: 100px; display: none;">
   <h2 id="end" style="display: none;">That's All Folks</h2>
    <script src="./index.js"></script>
