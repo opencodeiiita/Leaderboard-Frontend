@@ -50,3 +50,54 @@ body {
   tr:hover{
     background-color: rgb(11, 230, 29);
   }
+
+  th, td{
+    border-collapse: collapse;
+    /* border: 1px solid black; */
+    border-radius: 0.5px;
+    text-align: center;
+    margin: 5px;
+    padding: 10px;
+  }
+  th{
+    background-color: rgb(11, 230, 29);
+  }
+  tr:hover{
+    background-color: rgb(11, 230, 29);
+  }
+
+  table{
+    width: 70%;
+    border-collapse: separate;
+    border-spacing: 20px 10px;
+  }
+
+  tr:first-child{
+    width: 5%;
+  }
+
+  th, td{
+    border-radius: 20px;
+    border: 0;
+    margin: 5%;
+    box-shadow: grey 5px -5px 4px;
+  }
+  
+  td:hover{
+    background-color: white;
+    color: #3DB2FF;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;  
+  }
+
+  body{
+    background-color: #FEF9EF;
+  }
+
+  .index{
+    
+    background-color: #3DB2FF; 
+    color: white; 
+    font-weight: 500;
+  }

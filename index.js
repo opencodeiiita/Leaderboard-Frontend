@@ -90,7 +90,7 @@ function addToTable(arr) {
 
             default:
                 markup =
-                    '<tr><td>' +
+                    '<tr><td class="index">' +
                     rank +
                     '&nbsp;' +
                     '</td><td>' +
