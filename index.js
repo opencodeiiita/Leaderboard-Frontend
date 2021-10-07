@@ -53,9 +53,9 @@ function addToTable(arr) {
         switch (rank) {
             case 1:
                 markup =
-                    '<tr style="background-color: gold;"><td>' +
-                    rank +
-                    '&nbsp;' +
+                    '<tr style="background-color: #ffcc35bf;" class="each_row"><td>' +
+                    
+                    "&nbsp;<img src='./Assets/gold.png' class='medal'>" +
                     '</td><td>' +
                     name +
                     '</td><td> ' +
@@ -65,9 +65,9 @@ function addToTable(arr) {
                 break;
             case 2:
                 markup =
-                    '<tr style="background-color: silver;"><td>' +
-                    rank +
-                    '&nbsp;' +
+                    '<tr style="background-color: silver;" class="each_row"><td>' +
+                    
+                    "&nbsp;<img src='./Assets/silver.png' class='medal'>" +
                     '</td><td>' +
                     name +
                     '</td><td> ' +
@@ -77,9 +77,9 @@ function addToTable(arr) {
                 break;
             case 3:
                 markup =
-                    '<tr style="background-color: goldenrod;"><td>' +
-                    rank +
-                    '&nbsp;' +
+                    '<tr style="background-color: #cd9974;" class="each_row"><td>' +
+                    
+                    "&nbsp;<img src='./Assets/bronze.png' class='medal'>" +
                     '</td><td>' +
                     name +
                     '</td><td> ' +
@@ -90,7 +90,7 @@ function addToTable(arr) {
 
             default:
                 markup =
-                    '<tr><td>' +
+                    '<tr style="background: linear-gradient(to right, #ff80bd, #7ec9ffb8); " class="each_row"><td>' +
                     rank +
                     '&nbsp;' +
                     '</td><td>' +
