@@ -1,26 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+}
 
 body {
-  /* background: linear-gradient(
-    -45deg,
-    rgba(238, 119, 82, 0.8),
-    rgba(231, 60, 126, 0.8),
-    rgba(35, 166, 213, 0.8),
-    rgba(35, 213, 171, 0.8)
-  ); */
-  background: linear-gradient(
-    -45deg,
-    rgba(236, 190, 176, 0.8),
-    rgba(178, 219, 235, 0.8),
-    rgba(189, 235, 224, 0.8)
-  );
+  /* background: linear-gradient( -45deg, rgba(236, 190, 176, 0.8), rgba(178, 219, 235, 0.8), rgba(189, 235, 224, 0.8));
   background-size: 100% 100%;
   animation: gradient 20s ease infinite;
   /* height: 100vh; */
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+  margin: 0;
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-    'Helvetica Neue', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
+}
+
+header {
+  color: rgb(33, 37, 41);
+  transition: color 1s;
+}
+
+h2 {
+  font-weight: 100;
+}
+
+canvas {
+  transition: background-color 1s;
 }
 
 @keyframes gradient {
@@ -38,10 +46,13 @@ body {
 /* Title */
 
 .heading {
+  margin-block-start: 0;
+  margin-block-end: 0;
   padding-top: 3rem;
-  font-family: 'Proza Libre', sans-serif;
+  font-size: 2.5rem;
   font-weight: bold;
 }
+
 .textAnimation {
   color: #fff;
   font-size: 30px;
@@ -52,15 +63,17 @@ body {
   background-size: 200% auto;
   color: #fff;
   background-clip: text;
-  text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 3s linear infinite;
   /* display: inline; */
 }
+
 .subHeading {
+  font-size: 2rem;
   font-family: 'Proza Libre', sans-serif;
 }
+
 @keyframes textclip {
   to {
     background-position: 200% center;
@@ -73,24 +86,27 @@ body {
 
 /* Table */
 
+.loader {
+  height: 100px;
+  width: 100px;
+}
+
+.hide {
+  display: none;
+}
+
 #pointsTable {
   /* width: 20%; */
-  margin: 4rem auto;
+  border-collapse: separate;
+  border-spacing: 0 1em;
+  margin: 3rem auto 1rem auto;
+  width: 70%;
+  border-radius: 5px;
 }
 
 /* Media Queries */
-@media (min-width: 400px) and (max-width: 800px) {
-  .logo-img {
-    width: 20%;
-  }
 
-  #pointsTable {
-    margin: 8rem auto;
-  }
-}
-
-th,
-td {
+th, td {
   border-collapse: collapse;
   border: 1px solid black;
   border-radius: 0.5px;
@@ -98,9 +114,170 @@ td {
   margin: 5px;
   padding: 10px;
 }
+
 th {
   background-color: rgb(11, 230, 29);
 }
-tr:hover {
+
+.trow:hover {
   background-color: rgb(11, 230, 29);
+}
+
+.trow {
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+}
+
+.trow td {
+  margin: 50px;
+  border: none;
+}
+
+.rank-list {
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.user {
+  cursor: pointer;
+  font-size: 25px;
+  padding: 0 5rem;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 10% 10% 60% 20%;
+  height: 80px;
+  width: 70%;
+  background-color: white;
+  border-radius: 20px;
+  margin: 10px 0;
+  justify-items: flex-start;
+}
+
+.profile {
+  width: 60px;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 70%;
+}
+
+.points {
+  justify-self: flex-end;
+}
+
+.username {
+  justify-self: center;
+}
+
+.first {
+  background-color: #F0A229;
+}
+
+.second {
+  background-color: #3DC6FC
+}
+
+.third {
+  background-color: #4CD6B5
+}
+
+@media (min-width: 500px) and (max-width: 800px) {
+  .user {
+    padding: 0 1rem;
+    font-size: 20px;
+  }
+  .username {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .rank-list {
+    padding-left: 0;
+  }
+  .user {
+    padding: 0 1rem;
+    font-size: 13px;
+  }
+  .username {
+    margin-left: 20px;
+  }
+  .profile {
+    width: 50px;
+  }
+}
+
+.githubLink {
+  text-decoration: none;
+  color: black
+}
+
+.zoom {
+  transition: transform 0.5s;
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+}
+
+#toggle {
+  width: 60px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 160px;
+  background: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1), inset 0 8px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1), inset 0 8px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+}
+
+#toggle .indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  background: black;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  border-radius: 50%;
+  -webkit-box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), inset 0 4px 4px rgba(255, 255, 255, 0.2), inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), inset 0 4px 4px rgba(255, 255, 255, 0.2), inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#toggle.active .indicator {
+  left: 30px;
+}
+
+.dark-mode {
+  color: white
+}
+
+#tsparticles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.user:hover .rank, .user:hover .username, .user:hover .points {
+  background: linear-gradient(to right, #0099f7, #f11712);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 3s linear infinite;
 }
