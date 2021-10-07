@@ -195,6 +195,19 @@ th {
   background-color: #4CD6B5
 }
 
+.medal {
+  text-align: left;
+  justify-self: flex-start;
+  align-self: flex-start;
+  width: 40%;
+}
+
+.rank {
+  display: flex;
+  justify-items: center;
+  align-items: flex-start;
+}
+
 @media (min-width: 500px) and (max-width: 800px) {
   .user {
     padding: 0 1rem;

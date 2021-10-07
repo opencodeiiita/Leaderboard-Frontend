@@ -79,26 +79,30 @@ function addToTable(arr) {
             rank++;
         }
         let rankClass = "";
+        let rankToDisplay = rank;
         switch (rank) {
             case 1:
+                rankToDisplay = `<img src='./Assets/gold.png' class='medal'>`;
                 rankClass = " first";
                 break;
             case 2:
+                rankToDisplay = `<img src='./Assets/silver.png' class='medal'>`;
                 rankClass = " second";
                 break;
             case 3:
+                rankToDisplay = `<img src='./Assets/bronze.png' class='medal'>`;
                 rankClass = " third";
                 break;
 
             default:
+                rankToDisplay = rank;
                 rankClass = "";
         }
 
         const markup = `
-       
         <li class="user${rankClass} zoom">
         <div class="rank">
-        ${rank}
+        ${rankToDisplay}
         </div>
         <div class="profile">
         <a target="_blank" href="https://github.com/${name}" class="githubLink">
