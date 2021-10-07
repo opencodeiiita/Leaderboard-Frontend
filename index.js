@@ -45,6 +45,7 @@ function addToTable(arr) {
     var i;
     for (i = 0; i < arr.length; i++) {
         name = arr[i].username;
+        img = arr[i].image;
         points = arr[i].totalPoints;
         if (lastScore !== points) {
             lastScore = points;
@@ -53,10 +54,12 @@ function addToTable(arr) {
         switch (rank) {
             case 1:
                 markup =
-                    '<tr style="background-color: rgba(250, 188, 32, 0.6);"><td>' +
+                    '<tr style="background-color: rgba(255,215,0);"><td>' +
                     "&nbsp;<img src='./Assets/gold.png' class='medal'>" +
                     '</td><td>' +
+                    `&nbsp;<img src = ${img} class= "table_img" height = 40px />`+
                     name +
+                    '&nbsp;' +
                     '</td><td> ' +
                     '&nbsp;' +
                     points +
@@ -64,9 +67,10 @@ function addToTable(arr) {
                 break;
             case 2:
                 markup =
-                    '<tr style="background-color: rgba(192, 192, 192, 0.8);"><td>' +
+                    '<tr style="background-color: rgba(195, 199, 199);"><td>' +
                     "&nbsp;<img src='./Assets/silver.png' class='medal'>" +
                     '</td><td>' +
+                    `&nbsp;<img src = ${img} class ="table_img" height = 40px />`+
                     name +
                     '</td><td> ' +
                     '&nbsp;' +
@@ -78,6 +82,7 @@ function addToTable(arr) {
                     '<tr style="background-color: #c6956ae0;"><td>' +
                     "&nbsp;<img src='./Assets/bronze.png' class='medal'>" +
                     '</td><td>' +
+                    `&nbsp;<img src = ${img} class = "table_img" height = 40px />`+
                     name +
                     '</td><td> ' +
                     '&nbsp;' +
@@ -87,10 +92,11 @@ function addToTable(arr) {
 
             default:
                 markup =
-                    '<tr><td>' +
+                    '<tr style="border-radius: 12px 0 0 12px;"><td>' +
                     rank +
                     '&nbsp;' +
                     '</td><td>' +
+                    `&nbsp;<img src = ${img} class = "table_img" height = 40px />`+
                     name +
                     '</td><td> ' +
                     '&nbsp;' +

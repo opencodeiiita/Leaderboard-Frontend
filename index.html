@@ -29,70 +29,25 @@
     <title>Opencode'21 Leaderboard</title>
   </head>
   <body>
-    <img
-      class="logo-img"
-      src="https://i.pinimg.com/originals/c2/a9/c9/c2a9c9621175a6f04804d0d192a787b0.png"
-      alt="Alternate"
-    />
-<<<<<<< HEAD
-
-    <table id="pointsTable">
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>Username</th>
-          <th>Points</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-
-    <script>
-      async function getData() {
-        let res = await fetch('https://opencodeiiita.herokuapp.com/get-all-data/');
-        let data = await res.json();
-        return data;
-      }
-
-      getData().then(data => {
-        console.log(data);
-      });
-
-      function addToTable(arr) {
-        var set = new Set();
-        for (i = 0; i < arr.length; i++) {
-          set.add(arr[i].totalPoints);
-        }
-
-        var i;
-        for (i = 0; i < arr.length; i++) {
-          name = arr[i].username;
-          points = arr[i].totalPoints;
-          rank = [...set].indexOf(arr[i].totalPoints) + 1;
-          var markup =
-            '<tr><td>' +
-            rank +
-            '&nbsp;' +
-            '</td><td>' +
-            name +
-            '</td><td> ' +
-            '&nbsp;' +
-            points +
-            '</td></tr>';
-
-          $('table tbody').append(markup);
-        }
-      }
-    </script>
     <h1 class="heading">OpenCode'21 Leaderboard!</h1>
     <h2>Organised by <strong>Geekhaven</strong></h2>
+    <img
+    class="logo-img"
+    src="https://i.pinimg.com/originals/c2/a9/c9/c2a9c9621175a6f04804d0d192a787b0.png"
+    alt="Alternate"
+    />
+    <img
+      class="geek-img"
+      src="https://geekhaven.iiita.ac.in/images/gh.png"
+      alt="Geekheaven"
+    />
     <div class="table-div">
       <table id="pointsTable" class="rounded">
         <thead>
           <tr>
-            <th style="border-radius: 12px 0 0 0;" width='25%'>Rank</th>
+            <th style="border-radius: 12px 0 0 12px;" width='25%'>Rank</th>
             <th width='50%'>Username</th>
-            <th style="border-radius: 0 12px 0 0;" width='25%'>Points</th>
+            <th style="border-radius: 0 12px 12px 0; " width='25%'>Points</th>
           </tr>
         </thead>
         <tbody></tbody>

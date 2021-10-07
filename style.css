@@ -1,23 +1,29 @@
 body {
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: #eaeefa;
+  Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: linear-gradient(to right,  #33ccff 0%, #ff99cc 100%);
+
 }
 
 /* Title */
 
 .heading {
-  padding-top: 3rem;
+  padding-top: 15px;
+  font-size: 45px;
+  font-family: cursive;
 }
-
+h3{
+  font-family: cursive;
+  padding-bottom: 5px ;
+}
 .logo-img {
-  position: absolute;
-  width: 10%;
-  top: 10px;
-  left: 10px;
+  width: 15%;
 }
 
+.geek-img {
+  width: 15%;
+}
 /* Table */
 
 .table-div {
@@ -36,11 +42,6 @@ body {
 
 /* Media Queries */
 @media (max-width: 768px) {
-  .logo-img {
-    position: initial;
-    width: 50%;
-    margin-top: 12px;
-  }
   #pointsTable {
     width: 90%;
     margin: 3rem auto;
@@ -55,7 +56,7 @@ body {
 }
 
 tr {
-  transition: 0.3s linear;
+  transition: 0.7s linear;
 }
 
 th,
@@ -63,18 +64,36 @@ td {
   text-align: center;
   margin: 5px;
   padding: 10px;
-  border-collapse: collapse;
 }
 
 tbody tr {
-  background-color: white;
+  background-color: rgb(22, 238, 202);
 }
 
 thead {
-  background-color: #46f1a3;
+  background-color: #c20b67;
+  font-size: 20px;
+  font-family:cursive;
 }
 tbody tr:hover {
-  cursor: pointer;
-  transform: scale(1.03);
-  background-color: rgba(192, 192, 192, 5);
+  transform: scale(1.2);
+}
+table{
+  border-collapse: separate;
+  border-spacing: 0 5px;
+}
+td:first-child,
+th:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+td:last-child,
+th:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+.table_img{
+  border-radius: 20px;
+  position: relative;
+  left: -20px;
 }
