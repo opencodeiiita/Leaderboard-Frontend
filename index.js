@@ -1,4 +1,4 @@
-const confettiCanvas = document.querySelector('.tsparticles-canvas-el');
+const body = document.querySelector('body');
 const header = document.querySelector("header");
 var toggleButton = document.getElementById("toggle");
 $(document).ready(() => {
@@ -6,9 +6,9 @@ $(document).ready(() => {
     if (isDarkMode === null)
         return localStorage.setItem('dark', 0);
     if (isDarkMode == 1) {
-        console.log('came here2');
+        // console.log('came here2');
         toggleButton.classList.add("active");
-        confettiCanvas.style.backgroundColor = "#232323";
+        body.style.background = "linear-gradient(315deg, #485461 0%, #28313b 74%)";
         header.style.color = "white";
     }
 });
@@ -16,12 +16,12 @@ toggleButton.onclick = function () {
     toggleButton.classList.toggle("active");
     let isDarkMode = localStorage.getItem('dark');
     if (isDarkMode == 0) {
-        confettiCanvas.style.backgroundColor = "#232323";
+        body.style.background = "linear-gradient(315deg, #485461 0%, #28313b 74%)";
         header.style.color = "white";
         isDarkMode = 1;
     }
     else {
-        confettiCanvas.style.backgroundColor = "#E6F4F2";
+        body.style.background = "linear-gradient( -45deg, rgba(236, 190, 176, 0.8), rgba(178, 219, 235, 0.8), rgba(189, 235, 224, 0.8))";
         header.style.color = "black";
         isDarkMode = 0;
     }
@@ -45,7 +45,6 @@ window.addEventListener('scroll', () => {
     if (isFetching)
         return;
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        console.log('reached end');
         page++;
         isFetching = true;
         if (hasNext) {
@@ -65,7 +64,7 @@ window.addEventListener('scroll', () => {
 });
 getData().then(data => {
     isFetching = true;
-    console.log(data);
+    // console.log(data);
     hasNext = data.has_next;
     addToTable(data.data);
     isFetching = false;

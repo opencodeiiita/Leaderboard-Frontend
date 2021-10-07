@@ -13,9 +13,13 @@ body {
   animation: gradient 20s ease infinite;
   /* height: 100vh; */
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+  background: linear-gradient( -45deg, rgba(236, 190, 176, 0.8), rgba(178, 219, 235, 0.8), rgba(189, 235, 224, 0.8));
+  background-size: 100% 100%;
+  animation: gradient 20s ease infinite;
   margin: 0;
   text-align: center;
   font-family: 'Proza Libre', sans-serif;
+  transition: linear-gradient 3s;
 }
 
 header {
@@ -89,6 +93,7 @@ canvas {
 .loader {
   height: 100px;
   width: 100px;
+  margin-bottom: 30px;
 }
 
 .hide {
@@ -141,28 +146,31 @@ th {
   align-items: center;
   justify-content: center;
   margin-top: 50px;
+  margin-bottom: 40px;
 }
 
 .user {
-  cursor: pointer;
   font-size: 25px;
   padding: 0 5rem;
   align-items: center;
   display: grid;
   grid-template-columns: 10% 10% 60% 20%;
-  height: 80px;
-  width: 70%;
+  height: 55px;
+  width: 60%;
   background-color: white;
   border-radius: 20px;
   margin: 10px 0;
   justify-items: flex-start;
+  align-items: center;
 }
 
 .profile {
+  margin-top: 5px;
   width: 60px;
 }
 
 .profile img {
+  align-self: center;
   border-radius: 50%;
   width: 70%;
 }
