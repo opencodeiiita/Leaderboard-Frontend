@@ -2,22 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap');
 
 body {
-  /* background: linear-gradient(
-    -45deg,
-    rgba(238, 119, 82, 0.8),
-    rgba(231, 60, 126, 0.8),
-    rgba(35, 166, 213, 0.8),
-    rgba(35, 213, 171, 0.8)
-  ); */
-  background: linear-gradient(
-    -45deg,
-    rgba(236, 190, 176, 0.8),
-    rgba(178, 219, 235, 0.8),
-    rgba(189, 235, 224, 0.8)
-  );
-  background-size: 100% 100%;
-  animation: gradient 20s ease infinite;
-  /* height: 100vh; */
+  background: linear-gradient(-45deg, #ee7752, #23d5ab, #23a6d5, #e73c7e);
+  animation: gradient 1s ease infinite;
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
     'Helvetica Neue', sans-serif;
@@ -34,6 +20,7 @@ body {
     background-position: 0% 50%;
   }
 }
+
 
 /* Title */
 
@@ -72,6 +59,10 @@ body {
 }
 
 /* Table */
+#pointsTable {
+  width: 70%;
+  margin: 2rem auto;
+}
 
 #pointsTable {
   /* width: 20%; */
@@ -89,18 +80,69 @@ body {
   }
 }
 
+tr {
+  transition: 0.7s linear;
+}
+
 th,
 td {
-  border-collapse: collapse;
-  border: 1px solid black;
-  border-radius: 0.5px;
   text-align: center;
   margin: 5px;
   padding: 10px;
 }
-th {
-  background-color: rgb(11, 230, 29);
+
+tbody tr {
+  background-color: rgb(22, 238, 202);
 }
-tr:hover {
-  background-color: rgb(11, 230, 29);
+
+thead {
+  background-color: #c20b67;
+  font-size: 20px;
+  font-family:cursive;
+}
+
+table{
+  border-collapse: separate;
+  border-spacing: 0 5px;
+}
+td:first-child,
+th:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+td:last-child,
+th:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+.table_img{
+  border-radius: 20px;
+  
+}
+
+tbody tr:hover {
+  transform: scale(1.2);  
+  
+}
+
+.toppoints{
+  margin-top: 100px;
+  display: inline-flex;
+  transform: rotate(180deg);
+}
+.top1{
+  height: 120px;
+  width: 200px;
+  vertical-align: bottom;
+  background-color: #c20b67;
+}
+.top2{
+  height: 80px;
+  width: 200px;
+  background-color: #c20b67;
+}
+.top3{
+  height: 60px;
+  width: 200px;
+  background-color: #c20b67;
 }

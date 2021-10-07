@@ -45,6 +45,7 @@ function addToTable(arr) {
     var i;
     for (i = 0; i < arr.length; i++) {
         name = arr[i].username;
+        img = arr[i].image;
         points = arr[i].totalPoints;
         if (lastScore !== points) {
             lastScore = points;
@@ -53,11 +54,14 @@ function addToTable(arr) {
         switch (rank) {
             case 1:
                 markup =
-                    '<tr style="background-color: gold;"><td>' +
-                    rank +
-                    '&nbsp;' +
+                    '<tr style="background-color: rgba(255,215,0);"><td>' +
+                    rank + 
+                    "&nbsp;" +
+                    '</td><td>' +
+                    `&nbsp;<img src = ${img} class= "table_img" height = 40px />`+
                     '</td><td>' +
                     name +
+                    '&nbsp;' +
                     '</td><td> ' +
                     '&nbsp;' +
                     points +
@@ -65,9 +69,11 @@ function addToTable(arr) {
                 break;
             case 2:
                 markup =
-                    '<tr style="background-color: silver;"><td>' +
-                    rank +
-                    '&nbsp;' +
+                    '<tr style="background-color: rgba(195, 199, 199);"><td>' +
+                    rank+
+                    "&nbsp;" +
+                    '</td><td>' +
+                    `&nbsp;<img src = ${img} class ="table_img" height = 40px />`+
                     '</td><td>' +
                     name +
                     '</td><td> ' +
@@ -77,9 +83,11 @@ function addToTable(arr) {
                 break;
             case 3:
                 markup =
-                    '<tr style="background-color: goldenrod;"><td>' +
-                    rank +
-                    '&nbsp;' +
+                    '<tr style="background-color: #c6956ae0;"><td>' +
+                    rank+
+                    "&nbsp;" +
+                    '</td><td>' +
+                    `&nbsp;<img src = ${img} class = "table_img" height = 40px />`+
                     '</td><td>' +
                     name +
                     '</td><td> ' +
@@ -90,10 +98,13 @@ function addToTable(arr) {
 
             default:
                 markup =
-                    '<tr><td>' +
+                    '<tr style="border-radius: 12px 0 0 12px;"><td>' +
                     rank +
                     '&nbsp;' +
                     '</td><td>' +
+                    `&nbsp;<img src = ${img} class = "table_img" height = 40px />`+
+                    '</td><td>' +
+                    '&nbsp;' +
                     name +
                     '</td><td> ' +
                     '&nbsp;' +
