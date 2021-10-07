@@ -6,100 +6,118 @@ let isFetching = true;
 const $end = document.querySelector('#end');
 const $logo = document.querySelector('#logo');
 async function getData() {
-    $logo.style.display = "";
-    let res = await fetch(`https://opencodeiiita.herokuapp.com/get-all-data/?page=${page}`);
-    let data = await res.json();
-    $logo.style.display = "none";
-    return data;
+  $logo.style.display = '';
+  let res = await fetch(`https://opencodeiiita.herokuapp.com/get-all-data/?page=${page}`);
+  let data = await res.json();
+  $logo.style.display = 'none';
+  return data;
 }
 window.addEventListener('scroll', () => {
-    if (isFetching)
-        return;
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        console.log('reached end');
-        page++;
+  if (isFetching) return;
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    console.log('reached end');
+    page++;
+    isFetching = true;
+    if (hasNext) {
+      previousFetched = Date.now();
+      getData().then(data => {
         isFetching = true;
-        if (hasNext) {
-            previousFetched = Date.now();
-            getData().then(data => {
-                isFetching = true;
-                hasNext = data.has_next;
-                addToTable(data.data);
-                isFetching = false;
-            });
-        }
-        else {
-            $end.style.display = "block";
-            isFetching = true;
-        }
+        hasNext = data.has_next;
+        addToTable(data.data);
+        isFetching = false;
+      });
+    } else {
+      $end.style.display = 'block';
+      isFetching = true;
     }
+  }
 });
 getData().then(data => {
-    isFetching = true;
-    console.log(data);
-    hasNext = data.has_next;
-    addToTable(data.data);
-    isFetching = false;
+  isFetching = true;
+  console.log(data);
+  hasNext = data.has_next;
+  addToTable(data.data);
+  isFetching = false;
 });
 function addToTable(arr) {
-    var i;
-    for (i = 0; i < arr.length; i++) {
-        name = arr[i].username;
-        points = arr[i].totalPoints;
-        if (lastScore !== points) {
-            lastScore = points;
-            rank++;
-        }
-        switch (rank) {
-            case 1:
-                markup =
-                    '<tr style="background-color: gold;"><td>' +
-                    rank +
-                    '&nbsp;' +
-                    '</td><td>' +
-                    name +
-                    '</td><td> ' +
-                    '&nbsp;' +
-                    points +
-                    '</td></tr>';
-                break;
-            case 2:
-                markup =
-                    '<tr style="background-color: silver;"><td>' +
-                    rank +
-                    '&nbsp;' +
-                    '</td><td>' +
-                    name +
-                    '</td><td> ' +
-                    '&nbsp;' +
-                    points +
-                    '</td></tr>';
-                break;
-            case 3:
-                markup =
-                    '<tr style="background-color: goldenrod;"><td>' +
-                    rank +
-                    '&nbsp;' +
-                    '</td><td>' +
-                    name +
-                    '</td><td> ' +
-                    '&nbsp;' +
-                    points +
-                    '</td></tr>';
-                break;
-
-            default:
-                markup =
-                    '<tr><td>' +
-                    rank +
-                    '&nbsp;' +
-                    '</td><td>' +
-                    name +
-                    '</td><td> ' +
-                    '&nbsp;' +
-                    points +
-                    '</td></tr>';
-        }
-        $('table tbody').append(markup);
+  var i;
+  for (i = 0; i < arr.length; i++) {
+    name = arr[i].username;
+    points = arr[i].totalPoints;
+    if (lastScore !== points) {
+      lastScore = points;
+      rank++;
     }
+    switch (rank) {
+      case 1:
+        markup =
+          '<tr style="background-color: gold;"><td>' +
+          rank +
+          '&nbsp;' +
+          '</td><td>' +
+          name +
+          '</td><td> ' +
+          '&nbsp;' +
+          points +
+          '</td></tr>';
+        break;
+      case 2:
+        markup =
+          '<tr style="background-color: silver;"><td>' +
+          rank +
+          '&nbsp;' +
+          '</td><td>' +
+          name +
+          '</td><td> ' +
+          '&nbsp;' +
+          points +
+          '</td></tr>';
+        break;
+      case 3:
+        markup =
+          '<tr style="background-color: goldenrod;"><td>' +
+          rank +
+          '&nbsp;' +
+          '</td><td>' +
+          name +
+          '</td><td> ' +
+          '&nbsp;' +
+          points +
+          '</td></tr>';
+        break;
+
+      default:
+        markup =
+          '<tr><td>' + rank + '&nbsp;' + '</td><td>' + name + '</td><td> ' + '&nbsp;' + points + '</td></tr>';
+    }
+    $('table tbody').append(markup);
+  }
 }
+
+//////////////////////////////
+//         NAVBAR
+//////////////////////////////
+const menuBtn = document.querySelector('.menu-icon span');
+const searchBtn = document.querySelector('.search-icon');
+const cancelBtn = document.querySelector('.cancel-icon');
+const items = document.querySelector('.nav-items');
+const form = document.querySelector('form');
+menuBtn.onclick = () => {
+  items.classList.add('active');
+  menuBtn.classList.add('hide');
+  searchBtn.classList.add('hide');
+  cancelBtn.classList.add('show');
+};
+cancelBtn.onclick = () => {
+  items.classList.remove('active');
+  menuBtn.classList.remove('hide');
+  searchBtn.classList.remove('hide');
+  cancelBtn.classList.remove('show');
+  form.classList.remove('active');
+  cancelBtn.style.color = '#ff3d00';
+};
+searchBtn.onclick = () => {
+  form.classList.add('active');
+  searchBtn.classList.add('hide');
+  cancelBtn.classList.add('show');
+};

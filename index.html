@@ -12,6 +12,10 @@
       crossorigin="anonymous"
     />
     <link rel="icon" href="Assets/favicon-opencode.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
 
     <!-- Our Css -->
     <link rel="stylesheet" href="style.css" />
@@ -29,6 +33,30 @@
     <title>Opencode'21 Leaderboard</title>
   </head>
   <body>
+    <nav>
+      <div class="menu-icon">
+        <span class="fas fa-bars"></span>
+      </div>
+      <div class="logo">OpenCode</div>
+      <div class="nav-items">
+        <li>
+          <a href="#"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <!-- <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>-->
+      </div>
+      <div class="search-icon">
+        <span class="fas fa-search"></span>
+      </div>
+      <div class="cancel-icon">
+        <span class="fas fa-times" style="color: black"></span>
+      </div>
+      <form action="#">
+        <input type="search" class="search-data" placeholder="Search" required />
+        <button type="submit" class="fas fa-search"></button>
+      </form>
+    </nav>
     <h1 class="heading">
       OpenCode'
       <span class="textAnimation" style="font-size: 2.5rem">21 </span>
