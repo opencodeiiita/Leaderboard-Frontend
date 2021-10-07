@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap");
 
 body {
   /* background: linear-gradient(
@@ -19,8 +19,8 @@ body {
   animation: gradient 20s ease infinite;
   /* height: 100vh; */
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-    'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 @keyframes gradient {
@@ -39,7 +39,7 @@ body {
 
 .heading {
   padding-top: 3rem;
-  font-family: 'Proza Libre', sans-serif;
+  font-family: "Proza Libre", sans-serif;
   font-weight: bold;
 }
 .textAnimation {
@@ -59,7 +59,7 @@ body {
   /* display: inline; */
 }
 .subHeading {
-  font-family: 'Proza Libre', sans-serif;
+  font-family: "Proza Libre", sans-serif;
 }
 @keyframes textclip {
   to {
@@ -74,33 +74,66 @@ body {
 /* Table */
 
 #pointsTable {
-  /* width: 20%; */
-  margin: 4rem auto;
+  border-collapse: separate;
+  border-spacing: 0px 8px;
+  width: 70%;
+  margin: 2rem auto;
+}
+
+.medal {
+  width: 12%;
 }
 
 /* Media Queries */
-@media (min-width: 400px) and (max-width: 800px) {
+@media (max-width: 800px) {
   .logo-img {
     width: 20%;
   }
 
   #pointsTable {
-    margin: 8rem auto;
+    width: 90%;
+    margin: 3rem auto;
   }
+
+  .heading {
+    margin-top: 32px;
+  }
+  .medal {
+    width: 35%;
+  }
+}
+
+tr {
+  transition: 0.3s;
+}
+
+tbody tr {
+  background-color: white;
 }
 
 th,
 td {
-  border-collapse: collapse;
-  border: 1px solid black;
-  border-radius: 0.5px;
   text-align: center;
   margin: 5px;
   padding: 10px;
+  border-collapse: collapse;
 }
-th {
-  background-color: rgb(11, 230, 29);
+
+td:first-child,
+th:first-child {
+  border-radius: 10px 0 0 10px;
 }
-tr:hover {
-  background-color: rgb(11, 230, 29);
+
+td:last-child,
+th:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+thead {
+  background: linear-gradient(to right, #d31d74, #ff6e04);
+}
+tbody tr:hover {
+  cursor: pointer;
+  background-color: rgba(0, 255, 0, 0.4);
+  transform: scale(1.03);
 }
