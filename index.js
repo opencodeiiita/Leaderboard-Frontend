@@ -11,6 +11,10 @@ $(document).ready(() => {
         body.style.background = "linear-gradient(315deg, #485461 0%, #28313b 74%)";
         header.style.color = "white";
     }
+    setTimeout(() => {
+        const confetti = document.querySelector('#tsparticles');
+        confetti.remove();
+    }, 5000);
 });
 toggleButton.onclick = function () {
     toggleButton.classList.toggle("active");

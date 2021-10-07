@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="Assets/favicon-opencode.ico" type="image/x-icon" />
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.25.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-shape-confetti@1.10.0"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
@@ -17,6 +19,8 @@
 </head>
 
 <body>
+  <div id="tsparticles" class=".fade-out">
+  </div>
   <div id="toggle">
     <i class="indicator"> </i>
   </div>
@@ -35,6 +39,7 @@
   <img class="loader hide" src="./Assets/loader.gif" alt="Loader">
   <h2 id="end" style="display: none;">That's All Folks</h2>
   <script src="./index.js"></script>
+  <script src="./confetti.js"></script>
 </body>
 
 </html>

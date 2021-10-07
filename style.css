@@ -302,3 +302,29 @@ th {
   -webkit-text-fill-color: transparent;
   animation: textclip 3s linear infinite;
 }
+
+.fade-out {
+  animation: fadeOut ease 1.5s;
+  -webkit-animation: fadeOut ease 1.5s;
+  -moz-animation: fadeOut ease 1.5s;
+  -o-animation: fadeOut ease 1.5s;
+  -ms-animation: fadeOut ease 1.5s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
