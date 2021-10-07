@@ -130,7 +130,7 @@ th:last-child {
 }
 
 thead {
-  background: linear-gradient(to right, #d31d74, #ff6e04);
+  background: linear-gradient(to right, #ee76b0, #f3a268);
 }
 tbody tr:hover {
   cursor: pointer;
