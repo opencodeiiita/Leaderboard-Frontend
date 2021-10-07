@@ -1,26 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap');
+
 body {
+  /* background: linear-gradient(
+    -45deg,
+    rgba(238, 119, 82, 0.8),
+    rgba(231, 60, 126, 0.8),
+    rgba(35, 166, 213, 0.8),
+    rgba(35, 213, 171, 0.8)
+  ); */
+  background: linear-gradient(
+    -45deg,
+    rgba(236, 190, 176, 0.8),
+    rgba(178, 219, 235, 0.8),
+    rgba(189, 235, 224, 0.8)
+  );
+  background-size: 100% 100%;
+  animation: gradient 20s ease infinite;
+  /* height: 100vh; */
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
     'Helvetica Neue', sans-serif;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Title */
 
 .heading {
   padding-top: 3rem;
+  font-family: 'Proza Libre', sans-serif;
+  font-weight: bold;
+}
+.textAnimation {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  background: linear-gradient(to right, #095fab 10%, #25abe8 50%, #57d75b 60%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 3s linear infinite;
+  /* display: inline; */
+}
+.subHeading {
+  font-family: 'Proza Libre', sans-serif;
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }
 
 .logo-img {
-  width: 8%;
   padding-top: 1rem;
-  background-color: antiquewhite;
 }
 
 /* Table */
 
 #pointsTable {
   /* width: 20%; */
-  margin: 8rem auto;
+  margin: 4rem auto;
 }
 
 /* Media Queries */
@@ -34,19 +89,18 @@ body {
   }
 }
 
-
-
-  th, td{
-    border-collapse: collapse;
-    border: 1px solid black;
-    border-radius: 0.5px;
-    text-align: center;
-    margin: 5px;
-    padding: 10px;
-  }
-  th{
-    background-color: rgb(11, 230, 29);
-  }
-  tr:hover{
-    background-color: rgb(11, 230, 29);
-  }
+th,
+td {
+  border-collapse: collapse;
+  border: 1px solid black;
+  border-radius: 0.5px;
+  text-align: center;
+  margin: 5px;
+  padding: 10px;
+}
+th {
+  background-color: rgb(11, 230, 29);
+}
+tr:hover {
+  background-color: rgb(11, 230, 29);
+}
