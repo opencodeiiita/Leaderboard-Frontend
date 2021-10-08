@@ -31,6 +31,7 @@ toggleButton.onclick = function () {
     }
     localStorage.setItem('dark', isDarkMode);
 };
+
 var page = 1;
 var rank = 0;
 var lastScore = -1;
