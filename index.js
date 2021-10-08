@@ -1,22 +1,54 @@
+const body = document.querySelector('body');
+const header = document.querySelector("header");
+var toggleButton = document.getElementById("toggle");
+$(document).ready(() => {
+    let isDarkMode = localStorage.getItem('dark');
+    if (isDarkMode === null)
+        return localStorage.setItem('dark', 0);
+    if (isDarkMode == 1) {
+        // console.log('came here2');
+        toggleButton.classList.add("active");
+        body.style.background = "linear-gradient(315deg, #485461 0%, #28313b 74%)";
+        header.style.color = "white";
+    }
+    setTimeout(() => {
+        const confetti = document.querySelector('#tsparticles');
+        confetti.remove();
+    }, 5000);
+});
+toggleButton.onclick = function () {
+    toggleButton.classList.toggle("active");
+    let isDarkMode = localStorage.getItem('dark');
+    if (isDarkMode == 0) {
+        body.style.background = "linear-gradient(315deg, #485461 0%, #28313b 74%)";
+        header.style.color = "white";
+        isDarkMode = 1;
+    }
+    else {
+        body.style.background = "linear-gradient( -45deg, rgba(236, 190, 176, 0.8), rgba(178, 219, 235, 0.8), rgba(189, 235, 224, 0.8))";
+        header.style.color = "black";
+        isDarkMode = 0;
+    }
+    localStorage.setItem('dark', isDarkMode);
+};
 var page = 1;
 var rank = 0;
 var lastScore = -1;
 var hasNext = true;
 let isFetching = true;
 const $end = document.querySelector('#end');
-const $logo = document.querySelector('#logo');
+const $loader = document.querySelector('.loader');
 async function getData() {
-    $logo.style.display = "";
+    $loader.classList.remove('hide');
     let res = await fetch(`https://opencodeiiita.herokuapp.com/get-all-data/?page=${page}`);
     let data = await res.json();
-    $logo.style.display = "none";
+    $loader.classList.add('hide');
     return data;
 }
 window.addEventListener('scroll', () => {
     if (isFetching)
         return;
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        console.log('reached end');
         page++;
         isFetching = true;
         if (hasNext) {
@@ -36,7 +68,7 @@ window.addEventListener('scroll', () => {
 });
 getData().then(data => {
     isFetching = true;
-    console.log(data);
+    // console.log(data);
     hasNext = data.has_next;
     addToTable(data.data);
     isFetching = false;
@@ -50,56 +82,46 @@ function addToTable(arr) {
             lastScore = points;
             rank++;
         }
+        let rankClass = "";
+        let rankToDisplay = rank;
         switch (rank) {
             case 1:
-                markup =
-                    '<tr style="background-color: gold;"><td>' +
-                    rank +
-                    '&nbsp;' +
-                    '</td><td>' +
-                    name +
-                    '</td><td> ' +
-                    '&nbsp;' +
-                    points +
-                    '</td></tr>';
+                rankToDisplay = `<img src='./Assets/gold.png' class='medal'>`;
+                rankClass = " first";
                 break;
             case 2:
-                markup =
-                    '<tr style="background-color: silver;"><td>' +
-                    rank +
-                    '&nbsp;' +
-                    '</td><td>' +
-                    name +
-                    '</td><td> ' +
-                    '&nbsp;' +
-                    points +
-                    '</td></tr>';
+                rankToDisplay = `<img src='./Assets/silver.png' class='medal'>`;
+                rankClass = " second";
                 break;
             case 3:
-                markup =
-                    '<tr style="background-color: goldenrod;"><td>' +
-                    rank +
-                    '&nbsp;' +
-                    '</td><td>' +
-                    name +
-                    '</td><td> ' +
-                    '&nbsp;' +
-                    points +
-                    '</td></tr>';
+                rankToDisplay = `<img src='./Assets/bronze.png' class='medal'>`;
+                rankClass = " third";
                 break;
 
             default:
-                markup =
-                    '<tr><td>' +
-                    rank +
-                    '&nbsp;' +
-                    '</td><td>' +
-                    name +
-                    '</td><td> ' +
-                    '&nbsp;' +
-                    points +
-                    '</td></tr>';
+                rankToDisplay = rank;
+                rankClass = "";
         }
-        $('table tbody').append(markup);
+
+        const markup = `
+        <li class="user${rankClass} zoom">
+        <div class="rank">
+        ${rankToDisplay}
+        </div>
+        <div class="profile">
+        <a target="_blank" href="https://github.com/${name}" class="githubLink">
+                <img src="https://avatars.githubusercontent.com/${name}?size=200" alt="profile"> 
+                </a>
+                </div>
+                <div class="username">
+                <a target="_blank" href="https://github.com/${name}" class="githubLink">
+                ${name}
+                </a>
+                </div>
+            <div class="points">
+                ${points} pts.
+            </div>
+        </li>    `;
+        $('.rank-list').append(markup);
     }
 }

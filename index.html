@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
-      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
-      crossorigin="anonymous"
-    />
-    <link rel="icon" href="Assets/favicon-opencode.ico" type="image/x-icon" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="Assets/favicon-opencode.ico" type="image/x-icon" />
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.25.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-shape-confetti@1.10.0"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+    integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+    crossorigin="anonymous"></script>
+  <!-- Our Css -->
+  <link rel="stylesheet" href="./style.css" />
+  <title>Opencode'21 Leaderboard</title>
+</head>
 
-    <!-- Our Css -->
-    <link rel="stylesheet" href="style.css" />
-
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
-      integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
-      crossorigin="anonymous"
-    ></script>
-    <title>Opencode'21 Leaderboard</title>
-  </head>
-  <body>
+<body>
+  <div id="tsparticles" class=".fade-out">
+  </div>
+  <div id="toggle">
+    <i class="indicator"> </i>
+  </div>
+  <header>
     <h1 class="heading">
       OpenCode'
       <span class="textAnimation" style="font-size: 2.5rem">21 </span>
@@ -37,24 +33,13 @@
     <h2 class="subHeading">Organised by <strong>Geekhaven</strong></h2>
     <img class="logo-img" src="Assets/geekhaven.png" alt="GeekHaven Logo" width="90px" />
     <img class="logo-img" src="Assets/oc.png" alt="Opencode Logo" width="75px" />
+  </header>
+  <ul class="rank-list">
+  </ul>
+  <img class="loader hide" src="./Assets/loader.gif" alt="Loader">
+  <h2 id="end" style="display: none;">That's All Folks</h2>
+  <script src="./index.js"></script>
+  <script src="./confetti.js"></script>
+</body>
 
-    <table id="pointsTable">
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>Username</th>
-          <th>Points</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <img
-      id="logo"
-      src="./Assets/loader.gif"
-      alt="Loader"
-      style="height: 100px; width: 100px; display: none"
-    />
-    <h2 id="end" style="display: none">That's All Folks</h2>
-    <script src="./index.js"></script>
-  </body>
 </html>
