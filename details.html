@@ -34,7 +34,7 @@
         </div>
         <!-- <div class="logo">Opencode</div> -->
         <div class="nav-items">
-          <li>
+          <li id="homeLi">
             <a href="index.html"><i class="fas fa-home"></i> Home</a>
             <!-- <a href="#">Home</a> -->
           </li>
@@ -48,10 +48,15 @@
         <div class="cancel-icon">
           <span class="fas fa-times" style="color: black"></span>
         </div>
-        <form id="searchForm" action="/">
-          <input id="search" type="text" class="search-data" placeholder="Search" required />
+        <div id="formId"><form autocomplete="off" id="searchForm" action="/">
+          <input id="search" type="text" class="search-data" placeholder="Fetching Data..." required
+          disabled  />
           <button type="submit" class="searchBtn fas fa-search"></button>
         </form>
+        <ul id="searchList">
+
+        </ul>
+        </div>
       </nav>
       <h1>User: <span id="username"></span></h1>
       <table id="table" style="display: none;">

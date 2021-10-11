@@ -3,17 +3,74 @@ async function getData() {
     `https://opencodeiiita.herokuapp.com/get-all-data/?page=-1`
   );
   let data = await res.json();
+  
+  var inp=document.getElementById("search");
+  inp.removeAttribute("disabled");
+  inp.setAttribute("placeholder","Search");
+  var ar=[]
+  
+  inp.addEventListener("input",async (e)=>{
+    // console.log("hi");
+    ar=[];
+    $('#searchList').empty();
+    var list=document.getElementById("searchList");
+    // console.log(data);
+    let val=document.getElementById("search").value;
+    val=val.toUpperCase();
+    if(val.length)
+    {
+    for (i = 0; i < data.length; i++) {
+      if(ar.length===5) break;
+      // console.log(data[i]);
+      
+        // console.log("hi");
+        x=data[i].username.toUpperCase();
+      
+      if (x.includes(val)&& ar.length<5)
+      {
+     
+  
+        ar.push(data[i].username);
+        var searchItem=document.createElement("li");
+        searchItem.innerText=ar[ar.length-1];
+        
+        list.appendChild(searchItem);
+      }
+        
+        
+        
+
+      
+    }
+      
+    
+
+  }
+    
+    // console.log(ar);
+    //list of first 5! if size<2 close list
+    
+
+
+
+    
+  })
   return data;
 }
-var data=getData();
+var data=getData()
 var formEl = document.getElementById("searchForm");
+
+
+
+
 formEl.addEventListener("submit", (e) => {
 
     populateTable();
     e.preventDefault();
-    f=true;
+    
   
 })
+
 
 function populateTable() {
   
