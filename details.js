@@ -5,11 +5,14 @@ async function getData() {
   let data = await res.json();
   return data;
 }
-
+var data=getData();
 var formEl = document.getElementById("searchForm");
 formEl.addEventListener("submit", (e) => {
+
     populateTable();
     e.preventDefault();
+    f=true;
+  
 })
 
 function populateTable() {
@@ -20,7 +23,7 @@ function populateTable() {
   table.innerHTML='';
   var usernameSpan = document.getElementById("username");
 
-  getData().then((data) => {
+  data.then((data) => {
     var userData = data.find((user) => user.username === username);
     if (userData) {
       var trh=document.createElement("tr");
@@ -57,4 +60,5 @@ function populateTable() {
       table.style.display = 'none';
     }
   });
+
 }
