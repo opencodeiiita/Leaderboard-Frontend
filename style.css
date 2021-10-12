@@ -27,6 +27,7 @@ body {
   transition: linear-gradient 3s;
   justify-content: center;
   align-items: center;
+  overflow-x:hidden ;
 }
 
 header {
