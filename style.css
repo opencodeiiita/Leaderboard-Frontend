@@ -462,13 +462,28 @@ th {
 }
 #table{
   align-self: center;
-  position: relative;
-  left: 35%;
+  /* position: relative; */
+  padding-left: 33%;
+  /* z-index: 0;/ */
 }
+@media only screen and (max-width: 800px){
+  #table{
+    padding-left: 28%;
+  }
+}
+@media only screen and (max-width: 600px){
+  #table{
+    padding-left: 20%;
+  }
+}
+
 #tableParent{
   justify-content: center;
   align-items: center;
 }
 BUTTON:hover{
   cursor: pointer;
+}
+#navbar{
+  z-index: 1000;
 }
