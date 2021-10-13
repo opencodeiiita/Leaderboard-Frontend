@@ -448,7 +448,6 @@ th {
   }
 }
 #searchList{
-  /* margin-top: 50px; */
   z-index: 1;
   background-color: white;
   list-style:none;
@@ -462,9 +461,7 @@ th {
 }
 #table{
   align-self: center;
-  /* position: relative; */
   padding-left: 33%;
-  /* z-index: 0;/ */
 }
 @media only screen and (max-width: 800px){
   #table{

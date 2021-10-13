@@ -10,19 +10,14 @@ async function getData() {
   var ar = [];
 
   inp.addEventListener("input", async (e) => {
-    // console.log("hi");
     ar = [];
     $("#searchList").empty();
     var list = document.getElementById("searchList");
-    // console.log(data);
     let val = document.getElementById("search").value;
     val = val.toUpperCase();
     if (val.length) {
       for (i = 0; i < data.length; i++) {
         if (ar.length === 10) break;
-        // console.log(data[i]);
-
-        // console.log("hi");
         x = data[i].username.toUpperCase();
 
         if (x.includes(val) && ar.length < 10) {
@@ -36,7 +31,7 @@ async function getData() {
             populateTable();
             $("#searchList").empty();
 
-            // console.log(btn.value);
+
           });
           searchItem.appendChild(btn);
 
@@ -44,9 +39,6 @@ async function getData() {
         }
       }
     }
-
-    // console.log(ar);
-    //list of first 5! if size<2 close list
   });
   return data;
 }
