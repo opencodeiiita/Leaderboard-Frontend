@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="Assets/favicon-opencode.ico" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.25.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-shape-confetti@1.10.0"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+      integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  
+    <link rel="stylesheet" href="./style.css" />
+    <title>Opencode'21 Leaderboard</title>
+  </head>
+
+  <body>
+    <nav id="navbar">
+        <div class="menu-icon">
+          <span class="fas fa-bars"></span>
+        </div>
+        
+        <div class="nav-items">
+          <li id="homeLi">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            
+          </li>
+        </div>
+        <div class="search-icon">
+          <span class="fas fa-search"></span>
+        </div>
+        <div class="cancel-icon">
+          <span class="fas fa-times" style="color: black"></span>
+        </div>
+        <div id="formId"><form autocomplete="off" id="searchForm" action="/">
+          <input id="search" type="text" class="search-data" placeholder="Fetching Data..." required
+          disabled  />
+          <button type="submit" class="searchBtn fas fa-search"></button>
+        </form>
+        <ul id="searchList">
+
+        </ul>
+        </div>
+      </nav>
+      <h1>User: <span id="username"></span></h1>
+      <div id="tableParent">
+      <table id="table" style="display: none;">
+          <tr>
+              <th>Repo Name</th>
+              <th>Issue #</th>
+              <th>Points</th>
+          </tr>
+      </table>
+    </div>
+    <script src="./details.js"></script>
+  </body>
+</html>

@@ -25,6 +25,9 @@ body {
   text-align: center;
   font-family: 'Proza Libre', sans-serif;
   transition: linear-gradient 3s;
+  justify-content: center;
+  align-items: center;
+  overflow-x:hidden ;
 }
 
 header {
@@ -324,6 +327,7 @@ th {
     padding: 0 1rem;
     font-size: 20px;
   }
+
   .username {
     margin-left: 20px;
   }
