@@ -263,6 +263,7 @@ th {
 }
 
 .user {
+   
   font-size: 25px;
   padding: 0 5rem;
   align-items: center;
@@ -354,7 +355,7 @@ th {
 }
 
 .zoom {
-  transition: transform 0.5s;
+  transition: transform 0.2s;
 }
 
 .zoom:hover {
@@ -448,40 +449,76 @@ th {
     opacity: 0;
   }
 }
-#searchList{
-  z-index: 1;
-  background-color: white;
-  list-style:none;
-}
-#formId{
-  margin-top: 18px;
-}
-#homeLi{
-  top: 16px;
-  position:fixed;
-}
-#table{
-  align-self: center;
-  padding-left: 33%;
-}
-@media only screen and (max-width: 800px){
-  #table{
-    padding-left: 28%;
-  }
-}
-@media only screen and (max-width: 600px){
-  #table{
-    padding-left: 20%;
-  }
+
+
+/*css for dropdown start*/
+.dropdown_first {
+  background-color: #f0a029f6 !important;
 }
 
-#tableParent{
-  justify-content: center;
+.dropdown_second {
+  background-color: #3dc6fcee !important;
+}
+
+.dropdown_third {
+  background-color: #4cd6b6f1 !important;
+}
+
+.user .dropdown_display{
+  justify-content: center  ;
+  visibility: hidden; 
+  list-style: none;
+  display: inline-flex;
+  background-color: rgba(255, 255, 255, 0.925);
+  border-radius: 20px;
+  width: 1200%;
+  position: relative;  
+  left: -100%;
+  top: 3%;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
   align-items: center;
+  transform: translateY(-2em);
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0.1s, visibility 0.1s linear 0.4s, z-index 0.1s linear 0.11s;
 }
-BUTTON:hover{
-  cursor: pointer;
+
+.dropdown_display img{
+  width: 130px;
+  border-radius: 20px;
+  margin: 10% 5% 5% 10% ; 
+  padding: 0;
+
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
-#navbar{
-  z-index: 1000;
+
+
+.user:focus .dropdown_display ,
+.user:focus-within .dropdown_display ,
+.user:hover .dropdown_display  {
+  visibility: visible;  
+  z-index: 1;
+  opacity: 1;
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.4s; 
+ 
 }
+
+table, tr, td{
+  border: none;
+  text-align: left;
+  
+}
+
+.user .dropdown_display table{
+  border-style: hidden !important ;
+  margin: 0 5% 0 5%;
+
+}
+
+.user .dropdown_display table tr{
+background-color: transparent;
+align-items: left;
+font-size: 68%;
+}
+/*css for dropdown end*/

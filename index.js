@@ -88,6 +88,8 @@ function addToTable(arr) {
     for (i = 0; i < arr.length; i++) {
         name = arr[i].username;
         points = arr[i].totalPoints;
+        fullname = arr[i].name;
+        college = arr[i].college;
         if (lastScore !== points) {
             lastScore = points;
             rank++;
@@ -97,15 +99,15 @@ function addToTable(arr) {
         switch (rank) {
             case 1:
                 rankToDisplay = `<img src='./Assets/gold.png' class='medal'>`;
-                rankClass = " first";
+                rankClass = "first";
                 break;
             case 2:
                 rankToDisplay = `<img src='./Assets/silver.png' class='medal'>`;
-                rankClass = " second";
+                rankClass = "second";
                 break;
             case 3:
                 rankToDisplay = `<img src='./Assets/bronze.png' class='medal'>`;
-                rankClass = " third";
+                rankClass = "third";
                 break;
 
             default:
@@ -114,7 +116,7 @@ function addToTable(arr) {
         }
 
         const markup = `
-        <li class="user${rankClass} zoom">
+        <li class="user ${rankClass} zoom">
         <div class="rank">
         ${rankToDisplay}
         </div>
@@ -131,7 +133,22 @@ function addToTable(arr) {
             <div class="points">
                 ${points} pts.
             </div>
-        </li>    `;
+
+            <ul class="dropdown_display dropdown_${rankClass}">
+            <li><a href="https://github.com/${name}" ><img src="https://avatars.githubusercontent.com/${name}?size=200"></a></li>
+            <table>
+                <tr>
+                    <td>NAME</td>
+                    <td style = "text-transform:uppercase;">${fullname}</td>
+                </tr>
+                <tr>
+                    <td>COLLEGE</td>
+                    <td style = "text-transform:uppercase;">${college}</td>
+                </tr>
+            </table>
+        </ul>
+        </li>
+         `;
         $('.rank-list').append(markup);
     }
 }
