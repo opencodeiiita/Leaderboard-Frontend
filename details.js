@@ -77,11 +77,11 @@ function populateTable() {
       data.map((contribution) => {
         var tr = document.createElement("tr");
         var td1 = document.createElement("td");
-        td1.innerText = contribution.repoName;
+        td1.innerHTML = `<a href= "https://github.com/opencodeiiita/${contribution.repoName}">${contribution.repoName}</a>`;
         var td2 = document.createElement("td");
-        td2.innerText = contribution.issueID;
+        td2.innerHTML = `<a href ="https://github.com/opencodeiiita/${contribution.repoName}/issues/${contribution.issueID}"> ${contribution.issueID} </a>`;
         var td3 = document.createElement("td");
-        td3.innerText = contribution.points;
+        td3.innerHTML = contribution.points;
         tr.appendChild(td1);
         tr.appendChild(td2);
         tr.appendChild(td3);
