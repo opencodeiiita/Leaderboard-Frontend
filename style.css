@@ -424,6 +424,10 @@ th {
   animation: textclip 3s linear infinite;
 }
 
+.user:hover {
+  margin-bottom: 180px;
+}
+
 .fade-out {
   animation: fadeOut ease 1.5s;
   -webkit-animation: fadeOut ease 1.5s;
