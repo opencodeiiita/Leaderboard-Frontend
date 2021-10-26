@@ -81,9 +81,15 @@ nav .nav-items li {
 }
 nav .nav-items li a {
   color: #fff;
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 500;
   text-decoration: none;
+  position: absolute;
+  top: 25px;
+}
+.Search{
+  position: absolute;
+  right: 30px;
 }
 nav .nav-items li a:hover {
   color: #ccc;
@@ -140,17 +146,34 @@ nav .search-icon {
   nav {
     padding: 0 50px;
   }
-}
-
-@media (max-width: 720px) {
-  nav {
-    padding: 0 25px;
+  #searchList,#searchForm{
+    width: 250px;
   }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 850px) {
+  nav {
+    padding: 0 25px;
+  }
+  .userH1{
+    display: flex;
+    align-items: flex-end
+
+  }
+}
+
+@media (max-width: 480px) {
   nav form {
     max-width: 90%;
+  }
+  #searchList,#searchForm{
+    width: 1000px;
+    /* position: relative;
+    left: -50px; */
+  }
+  nav .nav-items li a{
+    font-size: 20px;
+    left: 0;
   }
 }
 @media (max-width: 388px) {
@@ -200,7 +223,77 @@ nav .search-icon {
   padding-top: 1rem;
 }
 
+#searchList button{
+  list-style-type: none;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #0099f7;
+} 
+
+#searchForm{
+  position: relative;
+  top: 15px;
+}
+
+#searchList {
+  list-style-type: none;
+  margin-top: 20px;
+  z-index: 1;
+  background-color: #0099f7;
+  max-height: 400px;
+  overflow-y: scroll;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+  ::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 20px;
+}
+  ::-webkit-scrollbar-thumb {
+  background: #888; 
+    border-radius:10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  
+  background: #555; 
+} 
+
 /* Table */
+
+#table a{
+  text-decoration: none;
+  color: black;
+}
+
+#table tr{
+  background-color: white;
+}
+
+td {
+  /* width: 10%; */
+  text-align: center;
+  border-style: solid none;
+  padding: 10px;
+  width: 80%;
+}
+td:first-child {
+  border-top-left-radius: 20px; 
+  border-bottom-left-radius: 20px;
+}
+td:last-child {
+  border-bottom-right-radius: 20px; 
+  border-top-right-radius: 20px; 
+}
+
+#table{
+  border-collapse: separate; 
+  border-spacing: 0 10px; 
+  
+}
 
 .loader {
   height: 100px;
@@ -234,13 +327,13 @@ td {
 }
 
 th {
-  background-color: rgb(11, 230, 29);
+  background-color: aqua;
+  border: none;
 }
 
 .trow:hover {
   background-color: rgb(11, 230, 29);
 }
-
 .trow {
   border-radius: 10px;
   background-color: white;
@@ -510,9 +603,19 @@ th {
 
 table, tr, td{
   border: none;
-  text-align: left;
-  
+  text-align: center;
 }
+table{
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#table tr:hover td{
+  background-color: aqua;
+  transform: scale(1.1);
+  transition: 2s;
+
+} 
 
 .user .dropdown_display table{
   border-style: hidden !important ;
