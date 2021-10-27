@@ -166,19 +166,9 @@ nav .search-icon {
   nav form {
     max-width: 90%;
   }
-  #searchList,#searchForm{
-    width: 1000px;
-    /* position: relative;
-    left: -50px; */
-  }
   nav .nav-items li a{
     font-size: 20px;
     left: 0;
-  }
-}
-@media (max-width: 388px) {
-  nav form {
-    max-width: 75%;
   }
 }
 
@@ -232,8 +222,8 @@ nav .search-icon {
 } 
 
 #searchForm{
-  position: relative;
-  top: 15px;
+  margin-top: 5%;
+  margin-right: 5%;
 }
 
 #searchList {
@@ -244,8 +234,12 @@ nav .search-icon {
   max-height: 400px;
   overflow-y: scroll;
   border-radius: 30px;
+  position: relative;
 }
 
+#searchList li button:hover{
+  cursor: pointer;
+}
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -606,8 +600,8 @@ table, tr, td{
   text-align: center;
 }
 table{
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 #table tr:hover td{
@@ -629,3 +623,17 @@ align-items: left;
 font-size: 68%;
 }
 /*css for dropdown end*/
+@media (max-width: 388px) {
+  nav form {
+    max-width: 55%;
+  }
+  table{
+    margin: 0%;
+    padding: 0;
+  }
+  #searchForm{
+    position: relative;
+    left: 100px;
+  }
+}
+
